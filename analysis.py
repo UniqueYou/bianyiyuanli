@@ -20,29 +20,29 @@ def is_digit(ch):
 
 
 # 识别空白
-def is_space(string: str, index: int):
-    status = 0
-    space = ''
-    while index < len(string):
-        if status == 0:
-            if string[index] == "\\":
-                status = 1
-                space += string[index]
-            elif string[index] == " ":
-                status = 2
-                space += ' '
-            else:
-                status = 2
-        elif status == 1:
-            if string[index] in ["t", "v", "f", "n", "r"]:
-                space += string[index]
-                status = 1
-            else:
-                status = 2
-        else:
-            if space != '':
-                return space
-        index += 1
+# def is_space(string: str, index: int):
+#     status = 0
+#     space = ''
+#     while index < len(string):
+#         if status == 0:
+#             if string[index] == "\\":
+#                 status = 1
+#                 space += string[index]
+#             elif string[index] == ' ':
+#                 status = 2
+#                 space += string[index]
+#             else:
+#                 status = 2
+#         elif status == 1:
+#             if string[index] in ["t", "v", "f", "n", "r"]:
+#                 space += string[index]
+#                 status = 1
+#             else:
+#                 status = 2
+#         else:
+#             if space != '':
+#                 return space
+#         index += 1
 
 
 def get_identifier(string: str, index: int):
@@ -98,27 +98,26 @@ def main():
     i = 0
     while i < len(code):
 
-        if code[i] == '\\' or code[i] == ' ':
-            temp = is_space(code, i)
-            i += len(temp)
-            # print('空白字符', temp)
-        elif is_letter(code[i]) or code[i] == '_':
-            temp = get_identifier(code, i)
-            i += len(temp)
-            if key.get(temp) is not None:
-                print('关键字', (temp, key.get(temp)[0]))
+        if code[i] not in ['\n', '\t', ' ', '']:
+            if is_letter(code[i]) or code[i] == '_':
+                temp = get_identifier(code, i)
+                i += len(temp)
+                if key.get(temp) is not None:
+                    print('关键字', (temp, key.get(temp)[0]))
+                else:
+                    print('标识符', (temp, key.get('标识符')[0]))
+                continue
+            elif is_digit(code[i]):
+                temp = get_number(code, i)
+                i += len(temp)
+                print('整数', (temp, key.get('整数')[0]))
+                continue
             else:
-                print('标识符', (temp, key.get('标识符')[0]))
-        elif is_digit(code[i]):
-            temp = get_number(code, i)
-            i += len(temp)
-            print('整数', (temp, key.get('整数')[0]))
-        else:
-            if key.get(code[i]) is not None:
-                print((code[i], key.get(code[i])[0]))
-            else:
-                print(f'不能识别{code[i]}')
-            i += 1
+                if key.get(code[i]) is not None:
+                    print((code[i], key.get(code[i])[0]))
+                else:
+                    print(f'不能识别{code[i]}')
+        i += 1
 
 
 if __name__ == '__main__':
