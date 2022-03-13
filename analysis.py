@@ -19,32 +19,6 @@ def is_digit(ch):
     return False
 
 
-# 识别空白
-# def is_space(string: str, index: int):
-#     status = 0
-#     space = ''
-#     while index < len(string):
-#         if status == 0:
-#             if string[index] == "\\":
-#                 status = 1
-#                 space += string[index]
-#             elif string[index] == ' ':
-#                 status = 2
-#                 space += string[index]
-#             else:
-#                 status = 2
-#         elif status == 1:
-#             if string[index] in ["t", "v", "f", "n", "r"]:
-#                 space += string[index]
-#                 status = 1
-#             else:
-#                 status = 2
-#         else:
-#             if space != '':
-#                 return space
-#         index += 1
-
-
 def get_identifier(string: str, index: int):
     status = 0
     idf = ''
