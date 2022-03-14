@@ -3,8 +3,6 @@
 """
 import pandas
 
-from main import get_code
-
 
 # 判断字符是否为字母
 def is_letter(ch):
@@ -141,10 +139,12 @@ def get_mistake():
     pass
 
 
-def main():
-    code = get_code(r'demo.cpp')
+# 单词识别
+def analysis_word(code):
     key = pandas.read_json('Sample.json')
     i = 0
+    output = []
+    error = []
     while i < len(code):
 
         if code[i] not in ['\n', '\t', ' ', '']:
@@ -153,13 +153,16 @@ def main():
                 i += len(temp)
                 if key.get(temp) is not None:
                     print('关键字', (temp, key.get(temp)[0]))
+                    output.append((temp, key.get(temp)[0]))
                 else:
                     print('标识符', (temp, key.get('标识符')[0]))
+                    output.append((temp, key.get('标识符')[0]))
                 continue
             elif is_digit(code[i]):
                 temp = get_number(code, i)
                 i += len(temp)
                 print('整数', (temp, key.get('整数')[0]))
+                output.append((temp, key.get('整数')[0]))
                 continue
             elif code[i] == '/':
                 temp = get_notes(code, i)
@@ -169,10 +172,9 @@ def main():
             else:
                 if key.get(code[i]) is not None:
                     print((code[i], key.get(code[i])[0]))
+                    output.append((code[i], key.get(code[i])[0]))
                 else:
                     print(f'不能识别{code[i]}')
+                    error.append(code[i])
         i += 1
-
-
-if __name__ == '__main__':
-    main()
+    return output, error

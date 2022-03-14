@@ -1,9 +1,11 @@
+import os
 import sys
 
 from PyQt5 import uic
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import *
-import os
+
+from analysis import analysis_word
 
 '''
 读取文件
@@ -50,6 +52,7 @@ class MainDemo(QMainWindow):
         self.ui.actionsave.triggered.connect(self.save_file)
         self.ui.actionnew.triggered.connect(self.new_file)
         self.ui.actionopenworkspace.triggered.connect(self.open_workspace)
+        self.ui.actionanalysis.triggered.connect(self.analysis)
 
         # self.ui.actionhelp.triggered.connect(self.get_help)
         # self.ui.actionrun.triggered.connect(self.run)
@@ -66,6 +69,16 @@ class MainDemo(QMainWindow):
         }
         self.ui.treeWidget.setHeaderLabels(['文件夹', '文件'])
         self.ui.treeWidget.clicked.connect(self.tree_clicked)
+
+    def analysis(self):
+        code = self.ui.textEdit.toPlainText()
+        output, error = analysis_word(code)
+        self.ui.textBrowser1.clear()
+        self.ui.textBrowser.clear()
+        for key, value in output:
+            self.ui.textBrowser1.append(f'\t{key}\t{value}')
+        for i in error:
+            self.ui.textBrowser.append(f'\t{i}')
 
     def tree_clicked(self):
         try:

@@ -4,10 +4,10 @@
  <widget class="QMainWindow" name="MainWindow">
   <property name="geometry">
    <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>1310</width>
-    <height>750</height>
+       <x>0</x>
+       <y>0</y>
+       <width>1413</width>
+       <height>608</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -27,24 +27,31 @@
      <height>0</height>
     </size>
    </property>
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
-     <widget class="Line" name="line">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QWidget" name="widget" native="true">
-      <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="0">
-        <widget class="QLabel" name="file_name_label">
-         <property name="text">
-          <string>文件名</string>
-         </property>
-        </widget>
-       </item>
+      <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="0">
+              <widget class="Line" name="line">
+                  <property name="orientation">
+                      <enum>Qt::Vertical</enum>
+                  </property>
+              </widget>
+          </item>
+          <item row="0" column="3">
+              <widget class="Line" name="line_2">
+                  <property name="orientation">
+                      <enum>Qt::Vertical</enum>
+                  </property>
+              </widget>
+          </item>
+          <item row="0" column="1">
+              <widget class="QWidget" name="widget" native="true">
+                  <layout class="QGridLayout" name="gridLayout_2">
+                      <item row="0" column="0">
+                          <widget class="QLabel" name="file_name_label">
+                              <property name="text">
+                                  <string>文件名</string>
+                              </property>
+                          </widget>
+                      </item>
        <item row="1" column="0">
         <widget class="QTextEdit" name="textEdit">
          <property name="minimumSize">
@@ -59,22 +66,22 @@
      </widget>
     </item>
     <item row="0" column="2">
-     <widget class="Line" name="line_2">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-     </widget>
+        <widget class="Line" name="line_3">
+            <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+            </property>
+        </widget>
     </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1310</width>
-     <height>26</height>
-    </rect>
+       <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>1413</width>
+           <height>32</height>
+       </rect>
    </property>
    <widget class="QMenu" name="menu">
     <property name="title">
@@ -96,7 +103,7 @@
     <property name="title">
      <string>词法分析</string>
     </property>
-    <addaction name="actionrun"/>
+       <addaction name="actionanalysis"/>
    </widget>
    <widget class="QMenu" name="menu_4">
     <property name="title">
@@ -137,24 +144,31 @@
    <property name="minimumSize">
     <size>
      <width>400</width>
-     <height>500</height>
+        <height>139</height>
     </size>
    </property>
    <property name="accessibleName">
     <string/>
    </property>
    <property name="windowTitle">
-    <string>结果分析</string>
+       <string>词法分析结果</string>
    </property>
    <attribute name="dockWidgetArea">
     <number>2</number>
    </attribute>
    <widget class="QWidget" name="dockWidgetContents_5">
-    <layout class="QGridLayout" name="gridLayout_4">
-     <item row="0" column="0">
-      <widget class="QTextBrowser" name="textBrowser1"/>
-     </item>
-    </layout>
+       <layout class="QGridLayout" name="gridLayout_4">
+           <item row="0" column="0">
+               <widget class="QTextBrowser" name="textBrowser1"/>
+           </item>
+           <item row="1" column="0">
+               <widget class="Line" name="line_4">
+                   <property name="orientation">
+                       <enum>Qt::Vertical</enum>
+                   </property>
+               </widget>
+           </item>
+       </layout>
    </widget>
   </widget>
   <widget class="QToolBar" name="toolBar">
@@ -191,26 +205,57 @@
     <layout class="QGridLayout" name="gridLayout_3">
      <item row="0" column="0">
       <widget class="QTreeWidget" name="treeWidget">
-       <column>
-        <property name="text">
-         <string notr="true">1</string>
-        </property>
-       </column>
+          <column>
+              <property name="text">
+                  <string notr="true">1</string>
+              </property>
+          </column>
       </widget>
      </item>
     </layout>
    </widget>
   </widget>
-  <action name="actionnew">
-   <property name="icon">
-    <iconset>
-     <normaloff>icon/file-plus.svg</normaloff>icon/file-plus.svg</iconset>
-   </property>
-   <property name="text">
-    <string>新建（N）</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+N</string>
+     <widget class="QDockWidget" name="dockWidget_2">
+         <property name="baseSize">
+             <size>
+                 <width>0</width>
+                 <height>0</height>
+             </size>
+         </property>
+         <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="windowTitle">
+             <string>错误分析</string>
+         </property>
+         <attribute name="dockWidgetArea">
+             <number>2</number>
+         </attribute>
+         <widget class="QWidget" name="dockWidgetContents">
+             <layout class="QGridLayout" name="gridLayout_5">
+                 <item row="0" column="0">
+                     <widget class="QWidget" name="widget_2" native="true">
+                         <layout class="QVBoxLayout" name="verticalLayout">
+                             <item>
+                                 <widget class="QTextBrowser" name="textBrowser"/>
+                             </item>
+                         </layout>
+                     </widget>
+                 </item>
+             </layout>
+         </widget>
+     </widget>
+     <action name="actionnew">
+         <property name="icon">
+             <iconset>
+                 <normaloff>icon/file-plus.svg</normaloff>icon/file-plus.svg
+             </iconset>
+         </property>
+         <property name="text">
+             <string>新建（N）</string>
+         </property>
+         <property name="shortcut">
+             <string>Ctrl+N</string>
    </property>
   </action>
   <action name="actionhelp">
@@ -264,11 +309,11 @@
     <string>打开文件</string>
    </property>
   </action>
-  <action name="actionrun">
-   <property name="text">
-    <string>分析</string>
-   </property>
-  </action>
+     <action name="actionanalysis">
+         <property name="text">
+             <string>分析</string>
+         </property>
+     </action>
  </widget>
  <resources/>
  <connections/>
