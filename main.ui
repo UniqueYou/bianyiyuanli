@@ -17,72 +17,72 @@
    <iconset>
     <normaloff>../../Downloads/code.svg</normaloff>../../Downloads/code.svg</iconset>
   </property>
-  <widget class="QWidget" name="centralwidget">
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>500</width>
-     <height>0</height>
-    </size>
-   </property>
-      <layout class="QGridLayout" name="gridLayout">
-          <item row="0" column="0">
-              <widget class="Line" name="line">
-                  <property name="orientation">
-                      <enum>Qt::Vertical</enum>
-                  </property>
-              </widget>
-          </item>
-          <item row="0" column="3">
-              <widget class="Line" name="line_2">
-                  <property name="orientation">
-                      <enum>Qt::Vertical</enum>
-                  </property>
-              </widget>
-          </item>
-          <item row="0" column="1">
-              <widget class="QWidget" name="widget" native="true">
-                  <layout class="QGridLayout" name="gridLayout_2">
-                      <item row="0" column="0">
-                          <widget class="QLabel" name="file_name_label">
-                              <property name="text">
-                                  <string>文件名</string>
-                              </property>
-                          </widget>
-                      </item>
-       <item row="1" column="0">
-        <widget class="QTextEdit" name="textEdit">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
+     <widget class="QWidget" name="centralwidget">
+         <property name="enabled">
+             <bool>true</bool>
          </property>
-        </widget>
-       </item>
+         <property name="minimumSize">
+             <size>
+                 <width>500</width>
+                 <height>0</height>
+             </size>
+         </property>
+         <layout class="QGridLayout" name="gridLayout">
+             <item row="0" column="0">
+                 <widget class="Line" name="line">
+                     <property name="orientation">
+                         <enum>Qt::Vertical</enum>
+                     </property>
+                 </widget>
+             </item>
+             <item row="0" column="3">
+                 <widget class="Line" name="line_2">
+                     <property name="orientation">
+                         <enum>Qt::Vertical</enum>
+                     </property>
+                 </widget>
+             </item>
+             <item row="0" column="1">
+                 <widget class="QWidget" name="widget" native="true">
+                     <layout class="QGridLayout" name="gridLayout_2">
+                         <item row="0" column="0">
+                             <widget class="QLabel" name="file_name_label">
+                                 <property name="text">
+                                     <string>文件名</string>
+                                 </property>
+                             </widget>
+                         </item>
+                         <item row="1" column="0">
+                             <widget class="QTextEdit" name="textEdit">
+                                 <property name="minimumSize">
+                                     <size>
+                                         <width>0</width>
+                                         <height>0</height>
+                                     </size>
+                                 </property>
+                             </widget>
+                         </item>
       </layout>
      </widget>
     </item>
-    <item row="0" column="2">
-        <widget class="Line" name="line_3">
-            <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-            </property>
-        </widget>
-    </item>
+             <item row="0" column="2">
+                 <widget class="Line" name="line_3">
+                     <property name="orientation">
+                         <enum>Qt::Horizontal</enum>
+                     </property>
+                 </widget>
+             </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-       <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>1413</width>
-           <height>32</height>
-       </rect>
-   </property>
+      <property name="geometry">
+          <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>1413</width>
+              <height>32</height>
+          </rect>
+      </property>
    <widget class="QMenu" name="menu">
     <property name="title">
      <string>文件</string>
@@ -156,37 +156,44 @@
    <attribute name="dockWidgetArea">
     <number>2</number>
    </attribute>
-   <widget class="QWidget" name="dockWidgetContents_5">
-       <layout class="QGridLayout" name="gridLayout_4">
-           <item row="0" column="0">
-               <widget class="QTextBrowser" name="textBrowser1"/>
-           </item>
-           <item row="1" column="0">
-               <widget class="Line" name="line_4">
-                   <property name="orientation">
-                       <enum>Qt::Vertical</enum>
-                   </property>
-               </widget>
-           </item>
-       </layout>
-   </widget>
+      <widget class="QWidget" name="dockWidgetContents_5">
+          <layout class="QGridLayout" name="gridLayout_4">
+              <item row="0" column="0">
+                  <widget class="QTextBrowser" name="textBrowser1"/>
+              </item>
+              <item row="1" column="0">
+                  <widget class="Line" name="line_4">
+                      <property name="orientation">
+                          <enum>Qt::Vertical</enum>
+                      </property>
+                  </widget>
+              </item>
+          </layout>
+      </widget>
   </widget>
-  <widget class="QToolBar" name="toolBar">
-   <property name="windowTitle">
-    <string>toolBar</string>
-   </property>
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-   <addaction name="actionnew"/>
-   <addaction name="actionopen"/>
-   <addaction name="actionopenworkspace"/>
-   <addaction name="actionsave"/>
+     <widget class="QToolBar" name="toolBar">
+         <property name="windowTitle">
+             <string>toolBar</string>
+         </property>
+         <property name="iconSize">
+             <size>
+                 <width>30</width>
+                 <height>30</height>
+             </size>
+         </property>
+         <attribute name="toolBarArea">
+             <enum>TopToolBarArea</enum>
+         </attribute>
+         <attribute name="toolBarBreak">
+             <bool>false</bool>
+         </attribute>
+         <addaction name="actionnew"/>
+         <addaction name="actionopen"/>
+         <addaction name="actionopenworkspace"/>
+         <addaction name="actionsave"/>
    <addaction name="actionhelp"/>
    <addaction name="actionabout"/>
+         <addaction name="actionanalysis"/>
   </widget>
   <widget class="QDockWidget" name="dockWidget">
    <property name="minimumSize">
@@ -204,13 +211,13 @@
    <widget class="QWidget" name="dockWidgetContents_2">
     <layout class="QGridLayout" name="gridLayout_3">
      <item row="0" column="0">
-      <widget class="QTreeWidget" name="treeWidget">
-          <column>
-              <property name="text">
-                  <string notr="true">1</string>
-              </property>
-          </column>
-      </widget>
+         <widget class="QTreeWidget" name="treeWidget">
+             <column>
+                 <property name="text">
+                     <string notr="true">1</string>
+                 </property>
+             </column>
+         </widget>
      </item>
     </layout>
    </widget>
@@ -248,7 +255,7 @@
      <action name="actionnew">
          <property name="icon">
              <iconset>
-                 <normaloff>icon/file-plus.svg</normaloff>icon/file-plus.svg
+                 <normaloff>icon1/添加文件.svg</normaloff>icon1/添加文件.svg
              </iconset>
          </property>
          <property name="text">
@@ -256,24 +263,26 @@
          </property>
          <property name="shortcut">
              <string>Ctrl+N</string>
-   </property>
-  </action>
-  <action name="actionhelp">
-   <property name="icon">
-    <iconset>
-     <normaloff>icon/help-circle.svg</normaloff>icon/help-circle.svg</iconset>
-   </property>
-   <property name="text">
-    <string>帮助文档（H）</string>
-   </property>
+         </property>
+     </action>
+     <action name="actionhelp">
+         <property name="icon">
+             <iconset>
+                 <normaloff>icon1/帮助.svg</normaloff>icon1/帮助.svg
+             </iconset>
+         </property>
+         <property name="text">
+             <string>帮助文档（H）</string>
+         </property>
    <property name="shortcut">
     <string>Ctrl+H</string>
    </property>
   </action>
   <action name="actionabout">
    <property name="icon">
-    <iconset>
-     <normaloff>icon/at-sign.svg</normaloff>icon/at-sign.svg</iconset>
+       <iconset>
+           <normaloff>icon1/关于我们.svg</normaloff>icon1/关于我们.svg
+       </iconset>
    </property>
    <property name="text">
     <string>关于</string>
@@ -281,8 +290,9 @@
   </action>
   <action name="actionopenworkspace">
    <property name="icon">
-    <iconset>
-     <normaloff>icon/folder.svg</normaloff>icon/folder.svg</iconset>
+       <iconset>
+           <normaloff>icon1/新增文件夹.svg</normaloff>icon1/新增文件夹.svg
+       </iconset>
    </property>
    <property name="text">
     <string>打开工作区</string>
@@ -290,8 +300,9 @@
   </action>
   <action name="actionsave">
    <property name="icon">
-    <iconset>
-     <normaloff>icon/save.svg</normaloff>icon/save.svg</iconset>
+       <iconset>
+           <normaloff>icon1/保存.svg</normaloff>icon1/保存.svg
+       </iconset>
    </property>
    <property name="text">
     <string>保存（S）</string>
@@ -300,16 +311,22 @@
     <string>Ctrl+S</string>
    </property>
   </action>
-  <action name="actionopen">
-   <property name="icon">
-    <iconset>
-     <normaloff>icon/file.svg</normaloff>icon/file.svg</iconset>
-   </property>
-   <property name="text">
-    <string>打开文件</string>
-   </property>
-  </action>
+     <action name="actionopen">
+         <property name="icon">
+             <iconset>
+                 <normaloff>icon1/文件.svg</normaloff>icon1/文件.svg
+             </iconset>
+         </property>
+         <property name="text">
+             <string>打开文件</string>
+         </property>
+     </action>
      <action name="actionanalysis">
+         <property name="icon">
+             <iconset>
+                 <normaloff>icon1/运行，调试.svg</normaloff>icon1/运行，调试.svg
+             </iconset>
+         </property>
          <property name="text">
              <string>分析</string>
          </property>
