@@ -5,7 +5,7 @@ from PyQt5 import uic
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import *
 
-from analysis import analysis_word
+# from analysis import analysis_word
 
 '''
 读取文件
